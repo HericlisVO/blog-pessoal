@@ -1,24 +1,37 @@
 import React from 'react';
-import Home from './pages/Home/Home'
-import logo from './logo.svg';
+
+import {Grid } from '@material-ui/core';
 import './App.css';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+   <>
+   <Grid container spacing={2}>
+      <Grid item xs={12}>
         <Home/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+      <Home/>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+      <Home/>
+      </Grid>
+      <Grid item xs={12} sm={3}>
+      <Home/>
+      </Grid>
+      <Grid item xs={12} sm={3}>
+      <Home/>
+      </Grid>
+      <Grid item xs={12} sm={3}>
+      <Home/>
+      </Grid>
+      <Grid item xs={12} sm={3}>
+      <Home/>
+      </Grid>
+
+   </Grid>
+   </>
   );
 }
 
