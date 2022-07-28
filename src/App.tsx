@@ -1,37 +1,18 @@
 import React from 'react';
 
-import {Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import './App.css';
 import Home from './pages/Home/Home';
+import NavBar from './estatics/navbar/NavBar';
+import Footer from './estatics/footer/Footer';
 
 function App() {
   return (
-   <>
-   <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Home/>
-      </Grid>
-      <Grid item xs={12} sm={6}>
+    <>
+      <NavBar/>
       <Home/>
-      </Grid>
-      <Grid item xs={12} sm={6}>
-      <Home/>
-      </Grid>
-      <Grid item xs={12} sm={3}>
-      <Home/>
-      </Grid>
-      <Grid item xs={12} sm={3}>
-      <Home/>
-      </Grid>
-      <Grid item xs={12} sm={3}>
-      <Home/>
-      </Grid>
-      <Grid item xs={12} sm={3}>
-      <Home/>
-      </Grid>
-
-   </Grid>
-   </>
+      <Footer/>
+    </>
   );
 }
 
