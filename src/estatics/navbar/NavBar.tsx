@@ -11,14 +11,14 @@ function NavBar() {
                 <Toolbar variant="dense">
                     <Box style={{ cursor: "pointer" }} >
                         <Typography variant="h5" color="inherit">
-                            BlogPessoal
+                            <a href="/">Blog Pessoal</a>
                         </Typography>
                     </Box>
 
                     <Box display="flex" justifyContent="start">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                                home
+                              <a href="/login">Home</a>
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
