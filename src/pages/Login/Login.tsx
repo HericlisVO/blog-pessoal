@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
@@ -8,7 +8,7 @@ import './Login.css';
 import { Box } from '@mui/material';
 
 function Login() {
-    let navigate = useNavigate();
+    let history = useNavigate();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -29,7 +29,7 @@ function Login() {
 
             useEffect(()=>{
                 if(token !== ''){
-                    navigate('/home')
+                    history('/home')
                 }
             }, [token])
 
@@ -76,4 +76,4 @@ function Login() {
     );
 }
 
-export default Login;       
+export default Login;
