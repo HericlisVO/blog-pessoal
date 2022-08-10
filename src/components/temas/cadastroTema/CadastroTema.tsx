@@ -2,9 +2,10 @@ import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import './CadastroTema.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 
@@ -12,8 +13,9 @@ import { buscaId, post, put } from '../../../services/Service';
 function CadastroTema() {
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>(); // id do tema a ser editado
-  const [token, setToken] = useLocalStorage("token");
-
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+);
   const [tema, setTema] = useState<Tema>({
     id: 0,
     categoria: "",
@@ -21,14 +23,14 @@ function CadastroTema() {
   });
 
   useEffect(() => {
-    if(token == ""){
+    if(token === ""){
         alert("Você precisa estar logado para acessar essa página");
         navigate("/login");
     }
     }, [token]);
 
     useEffect(() => {
-        if(id != undefined){
+        if(id !== undefined){
             findById(id);
         }
     }, [id]);
